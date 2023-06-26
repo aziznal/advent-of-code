@@ -12,4 +12,15 @@ const sumCalories = (elf: string): number => {
     .reduce((acc, next) => acc + next);
 };
 
-console.log(Math.max(...elves.map(sumCalories)));
+const elfCalories: number[] = elves.map(sumCalories);
+
+// Part 1 solution
+const mostCals = Math.max(...elfCalories);
+console.log(`Elf with the most calories has ${mostCals} calories`);
+
+// Part 2 solution
+const sortedCals = elfCalories.sort((a, b) => b - a);
+
+const nextElvesSum = sortedCals[0] + sortedCals[1] + sortedCals[2];
+
+console.log(nextElvesSum);
