@@ -1,7 +1,15 @@
 import * as fs from "fs";
 
-const input = fs.readFileSync("day-1/input.txt", "utf8");
+const elves = fs
+  .readFileSync("day-1/input.txt", "utf8")
+  .split("\n\n")
+  .filter((elf) => elf.length > 0); // skip empty lines
 
-const lines = input.split('\n')
+const sumCalories = (elf: string): number => {
+  return elf
+    .split("\n")
+    .map((num) => parseInt(num))
+    .reduce((acc, next) => acc + next);
+};
 
-console.log(lines.length)
+console.log(Math.max(...elves.map(sumCalories)));
