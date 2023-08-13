@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:day-1": "nodemon day-1/index.ts"
+    "start:day-1": "nodemon day-1/index.ts",
+    "start:day-2": "nodemon day-2/index.ts"
   },
   "keywords": [],
   "author": "",
